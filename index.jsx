@@ -7,9 +7,13 @@ function Index({ places }) {
             <main>
                 <h1>PLACES INDEX PAGE</h1>
                 <div className='row'>
-                { places.map(place => (
-                    <div className='col-sm-6'>
-                        <h2>{ place.pic }</h2>
+                { places.map((place, index) => (
+                    <div className='col-sm-6' key={index}>
+                        <h2>
+                          <a href={ `/places/${index}`}>
+                         { place.name }   
+                        </a>  
+                        </h2>
                         <p className='text-center'>{ places.cuisines }</p>
                         <img src={ place.pic } alt={ place.name } />
                         <p className='text-center'>
@@ -17,6 +21,8 @@ function Index({ places }) {
                         </p>
                     </div>
                 ))}
+                        
+                        
     
         
             </div>    
